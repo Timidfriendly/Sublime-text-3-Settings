@@ -1,0 +1,104 @@
+[
+    // Default resets
+    { "keys": ["ctrl+alt+left+"], "command": "move", "args": {"by": "subwords", "forward": true} },
+    { "keys": ["ctrl+alt+right"], "command": "move", "args": {"by": "subword_ends", "forward": true} },
+    { "keys": ["ctrl+alt+shift+left"], "command": "move", "args": {"by": "subwords", "forward": false, "extend": true} },
+    { "keys": ["ctrl+alt+shift+right"], "command": "move", "args": {"by": "subword_ends", "forward": true, "extend": true} },
+
+    { "keys": ["ctrl+alt+super+right"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+    { "keys": ["ctrl+alt+super+left"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+
+
+	// Emmet Custom keys
+	{
+        "keys": [
+            //"alt+shift+forward_slash"
+            "super+alt+ctrl+forward_slash"
+        ], 
+        "args": {
+            "action": "toggle_comment"
+        }, 
+        "command": "run_emmet_action", 
+        "context": [
+            {
+                "operand": "source.css - source.css.less, text.xml, text.html - source", 
+                "operator": "equal", 
+                "match_all": true, 
+                "key": "selector"
+            }, 
+            {
+                "match_all": true, 
+                "key": "emmet_action_enabled.toggle_comment"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "super+ctrl+w"
+        ], 
+        "command": "wrap_as_you_type", 
+        "context": [
+            {
+                "operand": false, 
+                "operator": "equal", 
+                "match_all": true, 
+                "key": "setting.is_widget"
+            }, 
+            {
+                "match_all": true, 
+                "key": "emmet_action_enabled.wrap_as_you_type"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+d"
+        ], 
+        "args": {
+            "action": "match_pair_outward"
+        }, 
+        "command": "run_emmet_action", 
+        "context": [
+            {
+                "key": "emmet_action_enabled.match_pair_outward"
+            }
+        ]
+    }, 
+    {
+        "keys": [
+            "ctrl+shift+d"
+        ], 
+        "args": {
+            "action": "match_pair_inward"
+        }, 
+        "command": "run_emmet_action", 
+        "context": [
+            {
+                "key": "emmet_action_enabled.match_pair_inward"
+            }
+        ]
+    },
+
+    // Sublime-Beautify
+    { 
+        "keys": [
+            "super+shift+h"
+        ], 
+            "command": "beautify" 
+    },
+
+    // Markdown preview in browser
+    {
+        "keys": [
+            "super+alt+o"
+        ], 
+        "caption": "Markdown Preview: Python Markdown: Preview in Browser",
+        "command": "markdown_preview",
+        "args": {
+            "target": "browser",
+            "parser": "markdown"
+        }
+    }
+
+
+]
